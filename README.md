@@ -26,3 +26,15 @@ fully tested by the [AMD Tests](https://github.com/amdjs/amdjs-tests) and [ESL T
 ```
 
 config options is same with requireJS, just try to replace the scirpt src.
+
+## 异步请求
+```js
+window.require(["https://demo/test.js"], (res) => {
+    console.log(res); // 打印出来一个es module
+    window.define('包名1', res); // 定义到全局，其他包使用时，通过require('包名')就可以使用该module
+})
+```
+打印出来一个es module
+![image](https://user-images.githubusercontent.com/15716269/170341794-e79d7166-26b1-4a99-8099-c41a65814c76.png)
+
+
